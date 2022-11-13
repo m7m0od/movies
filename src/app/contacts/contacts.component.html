@@ -1,0 +1,35 @@
+<form [formGroup]="contactsForm" (ngSubmit)="saveForm()">
+    <div class="form-group py-3">
+        <label class="text-white">Client Name :</label>
+        <input formControlName="clientName" type="text" class="form-control">
+        <small class="text-white">client name must be atleast 5 letters</small>
+        <div *ngIf="contactsForm.controls['clientName'].errors != null && contactsForm.controls['clientName'].touched " class="border border-danger p-2 m-2">
+            <p class="text-danger" >client name not valid</p>
+        </div>
+    </div>
+
+    <div class="form-group py-3">
+        <label class="text-white">Client Id :</label>
+        <input formControlName="clientId" type="number" class="form-control">
+        <small class="text-white">client id must be atleast 4 numbers</small>
+        <div *ngIf="contactsForm.controls['clientId'].errors != null && contactsForm.controls['clientId'].touched " class="border border-danger p-2 m-2">
+            <p class="text-danger">client id not valid</p>
+        </div>
+    </div>
+
+    <div class="form-group py-3">
+        <label class="text-white">Client pass :</label>
+        <input formControlName="clientPass" type="password" class="form-control">
+        <small class="text-white">client pass must be atleast 8 letters</small>
+        <div *ngIf="contactsForm.controls['clientPass'].errors != null && contactsForm.controls['clientPass'].touched " class="border border-danger p-2 m-2">
+            <p class="text-danger">client pass not valid</p>
+        </div>
+    </div>
+
+    <div class="form-group py-3">
+        <label class="text-white">Client Feedback :</label>
+        <textarea formControlName="clientFeedback" class="form-control"></textarea>
+    </div>
+
+    <button [disabled]='!contactsForm.valid' type="submit" class="btn btn-info">send</button>
+</form>

@@ -1,0 +1,20 @@
+a
+{
+    color: aqua;
+    text-decoration: none;
+}
+a:hover
+{
+    color:gray;
+    text-decoration: underline;
+}
+.d a
+{
+    color:lawngreen;
+}
+.d a:hover
+{
+    color:brown;
+    transform: scale(1.7);
+    transition: all .5s;
+}
